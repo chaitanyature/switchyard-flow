@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "switchyard-flow"
+version = "0.1.0"
+description = "A durable SQLite-backed DAG scheduler with fenced worker leases"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+switchyard = "switchyard.__main__:main"
+
+[tool.setuptools]
+packages = ["switchyard"]
+
+[tool.setuptools.package-data]
+switchyard = ["schema.sql"]

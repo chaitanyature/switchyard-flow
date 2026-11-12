@@ -1,0 +1,8 @@
+{
+  "jobs": {
+    "east": {"kind": "histogram", "pool": "readers", "payload": "red ferry blue ferry"},
+    "west": {"kind": "histogram", "pool": "readers", "payload": "blue train blue ferry"},
+    "city": {"kind": "merge", "needs": ["east", "west"]},
+    "top-two": {"kind": "top", "needs": ["city"], "payload": 2}
+  }
+}
